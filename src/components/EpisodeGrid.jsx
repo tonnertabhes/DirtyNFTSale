@@ -16,9 +16,7 @@ export default function EpisodeGrid() {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    if (!state.deroBridgeApiRef) return;
     async function get() {
-      if (!state.deroBridgeApiRef) return;
       let c = await getSC(
         "a5734183baaa1bd440febb933253cf02daf7c3c651577acbddc32d7d1c3ca9ef"
       );

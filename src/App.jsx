@@ -23,6 +23,7 @@ function App() {
 
       const [err] = await to(deroBridgeApi.init());
       if (err) {
+        return;
       } else {
         setState((state) => ({ ...state, deroBridgeApiRef: deroBridgeApiRef }));
       }
