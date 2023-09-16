@@ -1,0 +1,11 @@
+.card {
+    transition: all 0.3s;
+   
+   
+  }
+  
+ .custom-link {
+  vertical-align: middle;
+  border-style:dashed;
+ }
+  
