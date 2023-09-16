@@ -19,6 +19,8 @@ export default function Episode({
   image,
   bigfoot,
   deepvoice,
+  music,
+  animated,
   guests,
   scid,
 }) {
@@ -112,6 +114,8 @@ export default function Episode({
           <p>{description}</p>
           <p>Bigfoot: {bigfoot ? "True" : "False"}</p>
           <p>Deep Voice: {deepvoice ? "True" : "False"}</p>
+          <p>Music: {music ? "True" : "False"}</p>
+          <p>Animated: {animated ? "True" : "False"}</p>
           <p>Guests: {guests.map((x) => x + " ")}</p>
           <p>SCID:{scid}</p>
 

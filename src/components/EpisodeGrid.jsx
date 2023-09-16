@@ -70,6 +70,8 @@ export default function EpisodeGrid() {
                 deepvoice={x.metadata.attributes[`deep voice`]}
                 guests={x.metadata.attributes.guests}
                 scid={x.scid}
+                music={x.metadata.attributes.music}
+                animated={x.metadata.attributes.animated}
               />
             </Col>
           ))}
