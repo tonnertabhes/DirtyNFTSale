@@ -20,7 +20,7 @@ export default function EpisodeGrid() {
     async function get() {
       if (!state.deroBridgeApiRef) return;
       let c = await getSC(
-        "d21b385d0dacea1637aa940f97421e93dabdaf864ad6bf6aef86985edccd1d83"
+        "a5734183baaa1bd440febb933253cf02daf7c3c651577acbddc32d7d1c3ca9ef"
       );
       console.log("c", c);
       let epTest = new RegExp(`.*_sold`);

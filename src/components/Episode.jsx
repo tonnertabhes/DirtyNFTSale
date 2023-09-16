@@ -32,7 +32,7 @@ export default function Episode({
   const buy = () => {
     console.log("state", state);
     sendTransaction({
-      scid: "d21b385d0dacea1637aa940f97421e93dabdaf864ad6bf6aef86985edccd1d83",
+      scid: "a5734183baaa1bd440febb933253cf02daf7c3c651577acbddc32d7d1c3ca9ef",
       transfers: [
         {
           destination: state.randomAddress,
