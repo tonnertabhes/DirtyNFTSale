@@ -61,22 +61,19 @@ function App() {
             Once season 1 (52 episodes) is complete, I will apply to list on
             DeroNFTS.com
           </p>
-          <h3>Perks for Holders</h3>
+          <h3>How the NFT Changes Your Life</h3>
           <ul>
+            <li>You will receive a Christmas card</li>
+            <li>You will be invited to a discord server</li>
             <li>
-              Holders of these NFTs will be entered in the Official Dirty Dero
-              Daily Christmas Card Recipient List! (yes I'm serious)
+              Your favorite podcast will have more resources with which to win
+              the hearts and minds
             </li>
-            <li>Holders gain access to private club</li>
-          </ul>
-
-          <h3>Proceeds will:</h3>
-          <ul>
-            <li>help apollo evade homelessness</li>
-            <li>
-              improve the quality of the show thereby making you a millionaire
-            </li>
-            <li>be shared with guests</li>
+            <li>Your experience of the podcast will vastly improve</li>
+            <li>Your orientation will shift closer to the highest good</li>
+            <li>When we interview Joe Rogan your NFT will 100x</li>
+            <li>Your favorite guests will get a little gift from you &lt;3</li>
+            <li>apollo will keep thinking of new ways to thank you forever</li>
           </ul>
         </Row>
       </Container>
