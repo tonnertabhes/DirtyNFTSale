@@ -242,19 +242,19 @@ export default function EpisodeGrid() {
         </Button>{" "}
         <Button
           variant={
-            filterByGuests.includes("labyrinth") ? "primary" : "outline-primary"
+            filterByGuests.includes("Labyrinth") ? "primary" : "outline-primary"
           }
           onClick={() => {
-            if (filterByGuests.includes("labyrinth")) {
+            if (filterByGuests.includes("Labyrinth")) {
               setFilterByGuests(
-                filterByGuests.filter((guest) => guest !== "labyrinth")
+                filterByGuests.filter((guest) => guest !== "Labyrinth")
               );
             } else {
-              setFilterByGuests([...filterByGuests, "labyrinth"]);
+              setFilterByGuests([...filterByGuests, "Labyrinth"]);
             }
           }}
         >
-          Guests: labyrinth
+          Guests: Labyrinth
         </Button>{" "}
         <Button
           variant={
