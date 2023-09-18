@@ -27,12 +27,14 @@ export default function Episode({
   const [sendTransaction] = useSendTransaction();
   const [showModal, setShowModal] = useState(false);
   const [state, setState] = useContext(LoginContext);
+  const [episodeStatus, setEpisodeStatus] = useState(status);
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
 
   const buy = () => {
     console.log("state", state);
+
     sendTransaction({
       scid: "a5734183baaa1bd440febb933253cf02daf7c3c651577acbddc32d7d1c3ca9ef",
       transfers: [
@@ -58,6 +60,8 @@ export default function Episode({
           value: state.walletList[0].address,
         },
       ],
+    }).then(() => {
+      setEpisodeStatus(1);
     });
   };
 
@@ -86,11 +90,11 @@ export default function Episode({
             See More
           </Card.Link>
           <div className="position-absolute bottom-0 end-0 mb-3 me-3">
-            {status ? (
+            {episodeStatus ? (
               "Already Purchased"
             ) : (
               <Button onClick={buy} variant="primary">
-                Buy Now({price / 100000} Dero)
+                Buy Now ({price / 100000} Dero)
               </Button>
             )}
           </div>
@@ -125,9 +129,13 @@ export default function Episode({
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button onClick={buy} variant="primary">
-            Buy Now ({price / 100000} Dero)
-          </Button>
+          {episodeStatus ? (
+            "Already Purchased"
+          ) : (
+            <Button onClick={buy} variant="primary">
+              Buy Now ({price / 100000} Dero)
+            </Button>
+          )}
         </Modal.Footer>
       </Modal>
     </>
