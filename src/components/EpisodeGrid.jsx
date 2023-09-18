@@ -351,7 +351,9 @@ export default function EpisodeGrid() {
                 x.scid !==
                   "dc4af325190db919f2d28c758a8e5df1365f8f2782c9b755f13501c2e113648e" &&
                 x.scid !==
-                  "f455a9e668d84e781474f78016a940a03024b9478a0b3595469441487a006597"
+                  "f455a9e668d84e781474f78016a940a03024b9478a0b3595469441487a006597" &&
+                x.scid !==
+                  "9e7cf53c9c06402459457106b247020c5d13a50f2e63ffc2f2321aee70b537de"
             )
             .filter((x) => !filterByAnimated || x.metadata.attributes.animated)
             .filter((x) => !filterByMusic || x.metadata.attributes.music)
