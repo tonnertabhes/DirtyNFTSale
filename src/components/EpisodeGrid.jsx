@@ -274,6 +274,24 @@ export default function EpisodeGrid() {
         </Button>{" "}
         <Button
           variant={
+            filterByGuests.includes("CrypticNico")
+              ? "primary"
+              : "outline-primary"
+          }
+          onClick={() => {
+            if (filterByGuests.includes("CrypticNico")) {
+              setFilterByGuests(
+                filterByGuests.filter((guest) => guest !== "CrypticNico")
+              );
+            } else {
+              setFilterByGuests([...filterByGuests, "CrypticNico"]);
+            }
+          }}
+        >
+          Guests: CrypticNico
+        </Button>{" "}
+        <Button
+          variant={
             filterByGuests.includes("hansen33") ? "primary" : "outline-primary"
           }
           onClick={() => {
