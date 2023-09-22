@@ -23,9 +23,7 @@ export default function EpisodeGrid() {
 
   React.useEffect(() => {
     async function get() {
-      let c = await getSC(
-        "a5734183baaa1bd440febb933253cf02daf7c3c651577acbddc32d7d1c3ca9ef"
-      );
+      let c = await getSC(state.saleSCID);
       console.log("c", c);
       let epTest = new RegExp(`.*_sold`);
       let epkeys = Object.keys(c.stringkeys).filter((key) => epTest.test(key));
@@ -37,7 +35,7 @@ export default function EpisodeGrid() {
         let e = await getSC(scid);
         let metadata = e.stringkeys.metadata;
         metadata = hex2a(metadata);
-        console.log("metadata ", scid, metadata);
+
         let metadataobj = JSON.parse(metadata);
         episodeList.push({
           scid: scid,

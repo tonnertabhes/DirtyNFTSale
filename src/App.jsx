@@ -1,4 +1,4 @@
-import { useContext, useRef, useEffect } from "react";
+import { useContext, useRef, useEffect, useState } from "react";
 import "./App.css";
 import Episode from "./components/Episode";
 import EpisodeGrid from "./components/EpisodeGrid";
@@ -10,11 +10,14 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useRPCWallet } from "./useRPCWallet";
+import { Tab, Tabs } from "react-bootstrap";
+import Lottery from "./components/Lottery";
 
 function App() {
   const [state, setState] = useContext(LoginContext);
   const deroBridgeApiRef = useRef();
   const [walletInfo, isLoading, error, fetchWalletInfo] = useRPCWallet();
+  const [key, setKey] = useState("buy");
 
   useEffect(() => {
     const load = async () => {
@@ -74,11 +77,29 @@ function App() {
             <li>When we interview Joe Rogan your NFT will 100x</li>
             <li>Your favorite guests will get a little gift from you &lt;3</li>
             <li>apollo will keep thinking of new ways to thank you forever</li>
+            <li>
+              You are entered into a lottery every time there's a new episode
+            </li>
           </ul>
         </Row>
       </Container>
 
-      <EpisodeGrid />
+      <Tabs
+        id="controlled-tab-example"
+        activeKey={key}
+        onSelect={(k) => setKey(k)}
+      >
+        <Tab eventKey="buy" title="Buy">
+          <div style={{ marginTop: "20px" }}>
+            <EpisodeGrid />
+          </div>
+        </Tab>
+        <Tab eventKey="lottery" title="Lottery">
+          <div style={{ marginTop: "20px" }}>
+            <Lottery />
+          </div>
+        </Tab>
+      </Tabs>
     </>
   );
 }
