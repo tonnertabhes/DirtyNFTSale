@@ -30,7 +30,7 @@ const LoginProvider = (props) => {
     saleSCID:
       "a5734183baaa1bd440febb933253cf02daf7c3c651577acbddc32d7d1c3ca9ef",
     lottoSCID:
-      "89940f899cd7a358421e68d23abf96641f25009a143eb8ee0b13c6411d70d4ab",
+      "89586db9e7e94465f4afc6a8579fd66d9f0eb0f89119de7b2c7ce1b6def0dad8",
   });
   return (
     <LoginContext.Provider value={[state, setState]}>

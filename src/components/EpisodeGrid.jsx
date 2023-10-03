@@ -188,6 +188,40 @@ export default function EpisodeGrid() {
         </Button>{" "}
         <Button
           variant={
+            filterByGuests.includes("CryptoJimi")
+              ? "primary"
+              : "outline-primary"
+          }
+          onClick={() => {
+            if (filterByGuests.includes("CryptoJimi")) {
+              setFilterByGuests(
+                filterByGuests.filter((guest) => guest !== "CryptoJimi")
+              );
+            } else {
+              setFilterByGuests([...filterByGuests, "CryptoJimi"]);
+            }
+          }}
+        >
+          Guests: CryptoJimi
+        </Button>{" "}
+        <Button
+          variant={
+            filterByGuests.includes("clapclap") ? "primary" : "outline-primary"
+          }
+          onClick={() => {
+            if (filterByGuests.includes("clapclap")) {
+              setFilterByGuests(
+                filterByGuests.filter((guest) => guest !== "clapclap")
+              );
+            } else {
+              setFilterByGuests([...filterByGuests, "clapclap"]);
+            }
+          }}
+        >
+          Guests: clapclap
+        </Button>{" "}
+        <Button
+          variant={
             filterByGuests.includes("Kalina Lux")
               ? "primary"
               : "outline-primary"
