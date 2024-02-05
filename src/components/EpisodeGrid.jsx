@@ -22,8 +22,9 @@ export default function EpisodeGrid() {
   const [filterByGuests, setFilterByGuests] = React.useState([]);
 
   React.useEffect(() => {
+    if (state.xswd === undefined) return
     async function get() {
-      let c = await getSC(state.saleSCID);
+      let c = await getSC(state.saleSCID, false, true);
       console.log("c", c);
       let epTest = new RegExp(`.*_sold`);
       let epkeys = Object.keys(c.stringkeys).filter((key) => epTest.test(key));
@@ -32,7 +33,7 @@ export default function EpisodeGrid() {
         let scid = epkeys[i].substring(0, 64);
         let status = c.stringkeys[epkeys[i]];
         let price = c.stringkeys[`${scid}_price`];
-        let e = await getSC(scid);
+        let e = await getSC(scid, false, true);
         let metadata = e.stringkeys.metadata;
         metadata = hex2a(metadata);
 
@@ -49,7 +50,7 @@ export default function EpisodeGrid() {
       setLoading(false); // Set loading to false once data is loaded
     }
     get();
-  }, [state.deroBridgeApiRef]);
+  }, [state]);
 
   if (loading) {
     return <div>Loading...</div>;

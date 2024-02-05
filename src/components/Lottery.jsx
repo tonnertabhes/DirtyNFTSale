@@ -46,10 +46,11 @@ export default function Lottery() {
   };
 
   useEffect(() => {
+    if (state.xswd === undefined) return
     const fetchContractData = async () => {
       console.log("fetch");
       // Replace 'your-smart-contract-id' with the actual smart contract ID
-      const contractData = await getSC(state.lottoSCID);
+      const contractData = await getSC(state.lottoSCID, false, true);
 
       // Log the contract data to the console for debugging
       console.log(contractData);

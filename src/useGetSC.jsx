@@ -4,39 +4,28 @@ import to from "await-to-js";
 
 export function useGetSC() {
   const [state, setState] = useContext(LoginContext);
-  async function getSC(scid) {
-    /*  const deroBridgeApi = state.deroBridgeApiRef.current;
-
-    const [err, res] = await to(
-      deroBridgeApi.daemon("get-sc", {
-        scid: scid,
-        variables: true,
-      })
-    );
-    return res.data.result; */
-
-    let data = JSON.stringify({
-      jsonrpc: "2.0",
-      id: "1",
-      method: "DERO.GetSC",
-      params: {
-        scid: scid,
-        code: false,
-        variables: true,
-      },
+  if (state.xswd === undefined) return [null]
+  async function getSC(
+    scid,
+    code,
+    variables,
+    topoheight,
+    keysuint64,
+    keysstring,
+    keysbytes
+  ) {
+    const response = await state.xswd.node.GetSC({
+      scid: scid,
+      code: code,
+      variables: variables,
+      topoheight: topoheight,
+      keysuint64: keysuint64,
+      keysstring: keysstring,
+      keysbytes: keysbytes,
     });
-
-    let res = await fetch(`https://dero-api.mysrv.cloud/json_rpc`, {
-      method: "POST",
-
-      body: data,
-      headers: { "Content-Type": "application/json" },
-    });
-    let body = await res.json();
-    let scData = body.result;
-    console.log(`scData ${scid}`, scData);
-    return scData;
-  }
+    console.log(response);
+    return response.result;}
 
   return [getSC];
 }
+

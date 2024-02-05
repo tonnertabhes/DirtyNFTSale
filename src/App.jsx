@@ -12,6 +12,7 @@ import Col from "react-bootstrap/Col";
 import { useRPCWallet } from "./useRPCWallet";
 import { Tab, Tabs } from "react-bootstrap";
 import Lottery from "./components/Lottery";
+import XSWDConnect from "./components/xswdconnect";
 
 function App() {
   const [state, setState] = useContext(LoginContext);
@@ -55,6 +56,7 @@ function App() {
   return (
     <>
       <Container>
+        <XSWDConnect />
         <Row>
           <h1>The Dirty Dero Daily NFT Collection</h1>
         </Row>
