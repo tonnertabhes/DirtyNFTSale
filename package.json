@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-bootstrap": "^0.32.35",
     "await-to-js": "^3.0.0",
     "bootstrap": "^5.3.2",
     "dero-rpc-bridge-api": "^1.1.3",
